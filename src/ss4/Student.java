@@ -1,7 +1,7 @@
 package ss4;
 
 public class Student {
-    int code;
+    protected int code;
     String name;
     String address;
     float point;
@@ -15,6 +15,8 @@ public class Student {
         System.out.println("hello");
 
     }
+
+
 
     public void example() {
         System.out.println("Thi cử");
