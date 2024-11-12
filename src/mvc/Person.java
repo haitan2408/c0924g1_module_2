@@ -1,6 +1,6 @@
-package ss6;
+package mvc;
 
-public class Person {
+public abstract class Person {
     private int code;
     private String name;
     private String address;
@@ -42,7 +42,6 @@ public class Person {
         return this.code + "," + this.name + "," + this.address;
     }
 
-    public Person clone() {
-        return new Person(this.code, this.name, this.address);
-    }
+    public abstract void work();
+
 }

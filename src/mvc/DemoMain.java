@@ -1,4 +1,4 @@
-package ss6;
+package mvc;
 
 public class DemoMain {
     public static void main(String[] args) {
@@ -13,6 +13,8 @@ public class DemoMain {
         if(haitt instanceof Student) {
             System.out.println(((Student)haitt).getPoint());
         }
+
+
 
     }
 }

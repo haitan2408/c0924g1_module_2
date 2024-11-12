@@ -1,6 +1,6 @@
-package ss6;
+package mvc;
 
-public class Student extends Person {
+public class Student extends Person implements IStudentService {
     private float point;
 
     public Student() {
@@ -21,11 +21,18 @@ public class Student extends Person {
 
     @Override
     public String toString() {
+
         return super.toString() + "," + this.point;
     }
 
     @Override
-    public Student clone() {
-        return new Student();
+    public void work() {
+        System.out.println("study");
+    }
+
+
+    @Override
+    public void moveKen() {
+
     }
 }
