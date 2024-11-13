@@ -1,6 +1,6 @@
-package mvc;
+package mvc.entity;
 
-public class Student extends Person implements IStudentService {
+public class Student extends Person {
     private float point;
 
     public Student() {
@@ -23,16 +23,5 @@ public class Student extends Person implements IStudentService {
     public String toString() {
 
         return super.toString() + "," + this.point;
-    }
-
-    @Override
-    public void work() {
-        System.out.println("study");
-    }
-
-
-    @Override
-    public void moveKen() {
-
     }
 }

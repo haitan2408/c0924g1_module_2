@@ -1,4 +1,4 @@
-package mvc;
+package mvc.entity;
 
 public abstract class Person {
     private int code;
@@ -41,7 +41,5 @@ public abstract class Person {
     public String toString() {
         return this.code + "," + this.name + "," + this.address;
     }
-
-    public abstract void work();
 
 }
