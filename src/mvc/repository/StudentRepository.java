@@ -2,13 +2,18 @@ package mvc.repository;
 
 import mvc.entity.Student;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class StudentRepository {
-    private static Student[] students = new Student[10];
-    static {
-        students[0] = new Student(1, "HaiTT", "QN", 9);
+    private static List<Student> students = new LinkedList<>();
+
+    public List<Student> getAll() {
+        return students;
     }
 
-    public Student[] getAll() {
-        return students;
+    public void save(Student student) {
+        students.add(student);
     }
 }

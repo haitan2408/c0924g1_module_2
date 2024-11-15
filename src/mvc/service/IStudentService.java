@@ -2,6 +2,10 @@ package mvc.service;
 
 import mvc.entity.Student;
 
+import java.util.List;
+
 public interface IStudentService {
-    Student[] getAll();
+    List<Student> getAll();
+
+    void save(Student student);
 }
