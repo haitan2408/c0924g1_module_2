@@ -17,4 +17,19 @@ public class StudentService implements IStudentService {
     public void save(Student student) {
         studentRepository.save(student);
     }
+
+    @Override
+    public Student findById(int id) {
+        return null;
+    }
+
+    @Override
+    public void remove(int id) {
+
+    }
+
+    @Override
+    public List<Student> findByNam(String name) {
+        return List.of();
+    }
 }

@@ -1,6 +1,6 @@
 package mvc.entity;
 
-public abstract class Person {
+public abstract class Person implements Comparable<Student> {
     private int code;
     private String name;
     private String address;
@@ -42,4 +42,8 @@ public abstract class Person {
         return this.code + "," + this.name + "," + this.address;
     }
 
+    @Override
+    public int compareTo(Student o) {
+        return this.getCode() - o.getCode();
+    }
 }

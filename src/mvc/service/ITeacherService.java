@@ -1,4 +1,10 @@
 package mvc.service;
 
-public interface ITeacherService {
+import mvc.entity.Teacher;
+
+import java.util.List;
+
+public interface ITeacherService extends IService<Teacher> {
+
+
 }
