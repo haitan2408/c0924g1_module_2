@@ -15,8 +15,7 @@ public class DemoMain {
             System.out.println("1. Quản lý học sinh");
             System.out.println("2. Quản lý giáo viên");
             System.out.println("3. Thoát");
-            System.out.print("Mời bạn nhập lựa chọn: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = getChoice(scanner);
             switch (choice) {
                 case 1:
                     menuStudent();
@@ -44,9 +43,8 @@ public class DemoMain {
             System.out.println("4. Xóa học sinh");
             System.out.println("5. Tìm kiếm học sinh");
             System.out.println("6. Quay lại");
-            System.out.print("Mời bạn nhập lựa chọn: ");
 
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = getChoice(scanner);
             switch (choice) {
                 case 1:
                     List<Student> students = studentController.display();
@@ -86,5 +84,18 @@ public class DemoMain {
         float point = Float.parseFloat(scanner.nextLine());
         Student student = new Student(code, name, address, point);
         return student;
+    }
+
+    private static int getChoice(Scanner scanner)  {
+        System.out.print("Mời bạn nhập lựa chọn: ");
+        int choice =0;
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Choice phải là số");
+        } catch (Exception e) {
+            System.out.println("Lỗi không xác định");
+        }
+        return choice;
     }
 }
