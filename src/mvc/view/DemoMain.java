@@ -60,6 +60,24 @@ public class DemoMain {
                 case 3:
                     break;
                 case 4:
+                    System.out.println("Xóa học sinh");
+                    System.out.print("Nhập id cần xóa: ");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    Student student = studentController.findById(id);
+                    if (student == null) {
+                        System.out.println("Không tìm thấy học sinh có id là: "+ id);
+                    } else {
+                        System.out.println("Thông tin học sinh cần xóa: "+ student+". \n Bạn có chắc muốn xóa học sinh này không?. " +
+                                "\nLưu ý: Hành động này không thể hoàn tác.");
+                        System.out.println("Bấm y để xác nhận. Bấm phím bất kỳ để hủy.");
+                        char confirm = scanner.nextLine().charAt(0);
+                        if (confirm == 'y') {
+                            studentController.remove(id);
+                            System.out.println("Xóa thành công");
+                        } else {
+                            System.out.println("Hủy xóa");
+                        }
+                    }
                     break;
                 case 5:
                     break;

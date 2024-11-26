@@ -36,15 +36,43 @@ public class StudentRepository {
     }
 
     public void save(Student student) {
+        List<Student> students = new ArrayList<>();
+        students.add(student);
+        writeFile(students, true);
+    }
+
+    public Student findById(int id) {
+        List<Student> students = getAll();
+        for (Student student: students) {
+            if (student.getCode() == id) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    public void remove(int id) {
+        List<Student> students = getAll();
+        for (Student student: students) {
+            if (student.getCode() == id) {
+                students.remove(student);
+                break;
+            }
+        }
+        writeFile(students, false);
+    }
+
+    public static void writeFile(List<Student> students, boolean append) {
         File file = new File("src/mvc/data/data.csv");
-//        try with resource
-        try(FileWriter fileWriter = new FileWriter(file, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);) {
-            bufferedWriter.write(student.toString());
-            bufferedWriter.newLine();
+        try(FileWriter fileWriter = new FileWriter(file, append);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+            for(Student student: students) {
+                bufferedWriter.write(student.toString());
+                bufferedWriter.newLine();
+            }
+
         } catch (IOException e) {
             System.out.println("Lỗi khi ghi dữ liệu");
         }
-//        students.add(student);
     }
 }
