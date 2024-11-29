@@ -96,6 +96,10 @@ public class DemoMain {
         int code = Integer.parseInt(scanner.nextLine());
         System.out.print("Nhập tên học sinh:");
         String name = scanner.nextLine();
+        while (!name.matches("^([A-Z][a-z]{1,10}[ ])+[A-Z][a-z]{0,10}$")) {
+            System.out.print("Nhập lại tên do sai đinh dạng: ");
+            name = scanner.nextLine();
+        }
         System.out.print("Nhập địa chỉ học sinh:");
         String address = scanner.nextLine();
         System.out.print("Nhập điểm học sinh: ");

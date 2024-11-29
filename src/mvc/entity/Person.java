@@ -1,5 +1,7 @@
 package mvc.entity;
 
+import java.util.Objects;
+
 public abstract class Person implements Comparable<Student> {
     private int code;
     private String name;
@@ -45,5 +47,18 @@ public abstract class Person implements Comparable<Student> {
     @Override
     public int compareTo(Student o) {
         return this.getCode() - o.getCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return code == person.code;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(code);
     }
 }
