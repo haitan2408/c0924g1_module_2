@@ -1,13 +1,14 @@
 package mvc.controller;
 
 import mvc.entity.Student;
+import mvc.service.BeanFactory;
 import mvc.service.IStudentService;
 import mvc.service.impl.StudentService;
 
 import java.util.List;
 
 public class StudentController {
-    private IStudentService studentService = new StudentService();
+    private final IStudentService studentService = (IStudentService) BeanFactory.getBean("student");
     public List<Student> display() {
         return studentService.getAll();
     }
